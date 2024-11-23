@@ -9,7 +9,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <style>
     body {
-      background: linear-gradient(to bottom, #8B9AFC, #3a3a3a); /* Red to dark gradient */
+      background: linear-gradient(to bottom, #8B9AFC, #3a3a3a); 
       font-family: 'Arial', sans-serif;
       color: #fff;
       transition: background-color 0.5s ease-in-out;
@@ -31,7 +31,7 @@
     }
 
     .champion-card:hover {
-      transform: translateY(-15px) rotateY(10deg); /* 3D tilt effect */
+      transform: translateY(-15px) rotateY(10deg);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
       background-color: #3a3a3a;
     }
@@ -46,8 +46,8 @@
     }
 
     .champion-card:hover .champion-img {
-      transform: scale(1.1); /* Smooth zoom effect */
-      filter: brightness(0.8); /* Slightly darken the image */
+      transform: scale(1.1); 
+      filter: brightness(0.8); 
     }
 
     .card-body {
@@ -62,14 +62,14 @@
       color: #fff;
       margin-bottom: 10px;
       opacity: 0;
-      animation: fadeIn 0.5s forwards 0.2s; /* Fade-in animation */
+      animation: fadeIn 0.5s forwards 0.2s;
     }
 
     .card-text {
       font-size: 1.1rem;
       color: #bbb;
       opacity: 0;
-      animation: fadeIn 0.5s forwards 0.4s; /* Fade-in animation for text */
+      animation: fadeIn 0.5s forwards 0.4s; 
     }
 
     @keyframes fadeIn {
@@ -83,7 +83,7 @@
     }
 
     .btn-info {
-      background-color: #8B9AFC; /* Dark red */
+      background-color: #8B9AFC;
       color: white;
       border-radius: 25px;
       padding: 10px 20px;
@@ -92,12 +92,12 @@
     }
 
     .btn-info:hover {
-      background-color: #8B9AFC; /* Darker red on hover */
-      transform: scale(1.1); /* Button scale-up */
-      box-shadow: 0 0 10px #8B9AFC(220, 53, 69, 0.7); /* Glowing effect */
+      background-color: #8B9AFC; 
+      transform: scale(1.1); 
+      box-shadow: 0 0 10px #8B9AFC(220, 53, 69, 0.7); 
     }
 
-    /* Modal styles */
+    
     .modal-content {
       display: flex;
       padding: 30px;
@@ -106,7 +106,7 @@
       max-width: 900px;
       background-color: #2e2e2e;
       transform: translateY(50px);
-      animation: slideUp 0.5s forwards; /* Slide-up effect for modal */
+      animation: slideUp 0.5s forwards; 
     }
 
     @keyframes slideUp {
@@ -148,7 +148,7 @@
       border-radius: 100px;
     }
 
-    /* Responsive modal adjustments */
+   
     @media (max-width: 992px) {
       .modal-content {
         flex-direction: column;
@@ -195,11 +195,11 @@
 
   <div class="container mt-4">
     <div id="championContainer" class="row gy-4">
-      <!-- Champion cards will be dynamically loaded here -->
+  
     </div>
   </div>
 
-  <!-- Modal -->
+ 
   <div class="modal fade" id="championModal" tabindex="-1" aria-labelledby="championModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -273,14 +273,13 @@
       return champions ? champions.find(champion => champion.id === id) : null;
     };
 
-    // Store champion data in local storage to use later
+    
     const storeChampionData = async () => {
       const response = await fetch("https://ddragon.leagueoflegends.com/cdn/14.3.1/data/en_US/champion.json");
       const data = await response.json();
       localStorage.setItem("championsData", JSON.stringify(Object.values(data.data)));
     };
 
-    // Load champions on page load
     window.onload = async () => {
       await storeChampionData();
       loadChampions();
