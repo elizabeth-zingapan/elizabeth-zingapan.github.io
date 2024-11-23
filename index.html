@@ -25,19 +25,19 @@
 
         @keyframes backgroundSlideshow {
             0% {
-                background-image: url('Zingapan/1b.jpg');
+                background-image: url('1b.jpg');
             }
 
             33% {
-                background-image: url('Zingapan/2b.jpg');
+                background-image: url('2b.jpg');
             }
 
             66% {
-                background-image: url('Zingapan/3b.jpg');
+                background-image: url('3b.jpg');
             }
 
             100% {
-                background-image: url('Zingapan/1b.jpg');
+                background-image: url('1b.jpg');
             }
         }
 
@@ -93,7 +93,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap; /* Adjusts layout for smaller screens */
+            flex-wrap: wrap;
         }
 
         .content-section {
@@ -151,7 +151,18 @@
             color: #4048c0;
         }
 
-        @media (max-width: 768px) {
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                flex: 0 0 48%;
+                margin: 1%;
+            }
+
             .logo {
                 width: 100px;
                 height: 100px;
@@ -159,32 +170,28 @@
             }
 
             .content-section {
-                margin-left: 0; 
+                margin-left: 0;
                 text-align: center;
             }
 
             .btn-view-projects {
                 font-size: 1.2rem;
                 padding: 8px 16px;
-                margin: 0 auto; 
+                margin: 0 auto;
             }
 
-            .welcome-text {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
             .welcome-text {
                 font-size: 1.3rem;
             }
+        }
 
-            .btn-view-projects {
-                font-size: 1rem;
-                padding: 6px 12px;
-                margin: 0 auto; 
+        @media (min-width: 576px) and (max-width: 767px) {
+            .card {
+                flex: 0 0 48%;
+                margin: 1%;
             }
         }
+
     </style>
 </head>
 
@@ -192,7 +199,7 @@
     <main id="welcome-section">
         <div class="container d-flex justify-content-center align-items-center text-center">
             <div class="welcome-content">
-                <img src="Zingapan/logo.jpg" alt="Logo" class="logo">
+                <img src="logo.jpg" alt="Logo" class="logo">
                 <div class="content-section">
                     <h1 class="welcome-text fade-in">Welcome to My Homepage</h1>
                     <button class="btn btn-view-projects" id="view-projects-btn">View My Projects</button>
@@ -203,39 +210,34 @@
 
     <section id="projects" class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <h1 class="project-title">My Projects</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="card h-100">
-                        <img src="Zingapan/la union.jpg" class="card-img-top" alt="Project 1">
+                        <img src="c:\Users\ADMIN\Downloads\la union.jpg" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">La Union</h5>
                             <p class="card-text">Discover La Union, a paradise with beautiful beaches, thrilling surf spots, and captivating landscapes—ideal for both adventure and relaxation!</p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="Zingapan/project1.html" class="btn btn-primary">Learn more</a>
+                            <a href="project1.html" class="btn btn-primary">Learn more</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="card h-100">
-                        <img src="Zingapan/cat2.jpg" class="card-img-top" alt="Project 2">
+                        <img src="p2.webp" class="card-img-top" alt="Project 2">
                         <div class="card-body">
-                            <h5 class="card-title">Project 2</h5>
-                            <p class="card-text">A brief description.</p>
+                            <h5 class="card-title">League of Legends</h5>
+                            <p class="card-text">Step into League of Legends, a dynamic battlefield of strategy, skill, and teamwork where champions clash and legends are made!</p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="#" class="btn btn-primary">Learn more</a>
+                            <a href="project2.html" class="btn btn-primary">Learn more</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="card h-100">
-                        <img src="Zingapan/cat3.jpg" class="card-img-top" alt="Project 3">
+                        <img src="cat3.jpg" class="card-img-top" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title">Project 3</h5>
                             <p class="card-text">A brief description.</p>
